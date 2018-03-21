@@ -95,6 +95,16 @@ function saveBackgroundColor(url, color) {
   chrome.storage.sync.set(items);
 }
 
+function wow(wow) {
+  var paragraphs = document.getElementsByTagName("p");
+  console.log("hi");
+  for(var i = 0; i < paragraphs.length; i++)
+  {
+      alert(paragraphs[i].innerHTML);
+      console.log(paragraphs[i].innerHTML);
+  }
+}
+
 // This extension loads the saved background color for the current tab if one
 // exists. The user can select a new background color from the dropdown for the
 // current page, and it will be saved as part of the extension's isolated
@@ -119,8 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Ensure the background color is changed and saved when the dropdown
     // selection changes.
     dropdown.addEventListener('change', () => {
+      console.log("why hello there");
       changeBackgroundColor(dropdown.value);
       saveBackgroundColor(url, dropdown.value);
+      wow(dropdown.value);
     });
   });
 });
