@@ -98,9 +98,10 @@ function saveBackgroundColor(url, color) {
 function wow(wow) {
   var paragraphs = document.getElementsByTagName("p");
   console.log("hi");
+  console.log(paragraphs.length);
   for(var i = 0; i < paragraphs.length; i++)
   {
-      alert(paragraphs[i].innerHTML);
+      alert(paragraphs[i].innerHTML = "wow");
       console.log(paragraphs[i].innerHTML);
   }
 }
