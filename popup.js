@@ -96,14 +96,13 @@ function saveBackgroundColor(url, color) {
 }
 
 function wow(wow) {
-  var paragraphs = document.getElementsByTagName("p");
-  console.log("hi");
-  console.log(paragraphs.length);
-  for(var i = 0; i < paragraphs.length; i++)
-  {
-      alert(paragraphs[i].innerHTML = "wow");
-      console.log(paragraphs[i].innerHTML);
-  }
+  var script = "var tags = document.getElementsByTagName('p');
+  for (i in tags)
+    tags[i].innerText = 'wow '.repeat(tags[i].innerText.split(' ').length)";
+
+  chrome.tabs.executeScript({
+    code: script
+  });
 }
 
 // This extension loads the saved background color for the current tab if one
