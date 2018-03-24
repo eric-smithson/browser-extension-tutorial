@@ -39,11 +39,14 @@ function getCurrentTabUrl(callback) {
 }
 
 function wow() {
-  var script = `tag_types = ["p", "a", "span"]
-for (t in tag_types){
+  var script = `tag_types = ["p", "h1", "h2", "h3", "h4", "h5", "h6"]
+for (t in tag_types) {
   var tags = document.getElementsByTagName(tag_types[t]);
-  for (i in tags)
-    tags[i].innerText = 'wow '.repeat(tags[i].innerText.split(' ').length);
+  for (i in tags) {
+    try {
+      tags[i].innerText = 'wow '.repeat(tags[i].innerText.split(' ').length);
+    } catch(err) {}
+  }
 }`
 
   chrome.tabs.executeScript({
