@@ -96,9 +96,9 @@ function saveBackgroundColor(url, color) {
 }
 
 function wow(wow) {
-  var script = "var tags = document.getElementsByTagName('p');
-  for (i in tags)
-    tags[i].innerText = 'wow '.repeat(tags[i].innerText.split(' ').length)";
+  var script = `var tags = document.getElementsByTagName('p');
+for (i in tags)
+  tags[i].innerText = 'wow '.repeat(tags[i].innerText.split(' ').length);`
 
   chrome.tabs.executeScript({
     code: script
