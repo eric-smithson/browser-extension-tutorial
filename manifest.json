@@ -1,12 +1,12 @@
 {
   "manifest_version": 2,
 
-  "name": "Getting started example",
-  "description": "This extension allows the user to change the background color of the current page.",
+  "name": "wow",
+  "description": "wow",
   "version": "1.0",
 
   "browser_action": {
-    "default_icon": "doge-19px.png",
+    "default_icon": "wow.png",
     "default_popup": "popup.html"
   },
   "permissions": [
